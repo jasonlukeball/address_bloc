@@ -133,46 +133,46 @@ RSpec.describe AddressBook do
 
     it "searches AddressBook for a non-existant entry" do
       book.import_from_csv("entries.csv")
-      entry = book.binary_search("Dan")
+      entry = book.binary_search("Dan", "dan@blocmail.com")
       expect(entry).to be_nil
     end
 
     it "searches AddressBook for Bill" do
       book.import_from_csv("entries.csv")
-      entry = book.binary_search("Bill")
+      entry = book.binary_search("Bill", "bill@blocmail.com")
       check_entry(entry, "Bill", "555-555-4854", "bill@blocmail.com")
     end
 
     it "searches AddressBook for Billy" do
       book.import_from_csv("entries.csv")
-      entry = book.binary_search("Billy")
+      entry = book.binary_search("Billy", "billy@blocmail.com")
       expect(entry).to be_nil
     end
 
     it "searches AddressBook for Bob" do
       book.import_from_csv("entries.csv")
-      entry = book.binary_search("Bob")
+      entry = book.binary_search("Bob", "bob@blocmail.com")
       expect(entry).to be_a Entry
       check_entry(entry, "Bob", "555-555-5415", "bob@blocmail.com")
     end
 
     it "searches AddressBook for Joe" do
       book.import_from_csv("entries.csv")
-      entry = book.binary_search("Joe")
+      entry = book.binary_search("Joe", "joe@blocmail.com")
       expect(entry).to be_a Entry
       check_entry(entry, "Joe", "555-555-3660", "joe@blocmail.com")
     end
 
     it "searches AddressBook for Sally" do
       book.import_from_csv("entries.csv")
-      entry = book.binary_search("Sally")
+      entry = book.binary_search("Sally", "sally@blocmail.com")
       expect(entry).to be_a Entry
       check_entry(entry, "Sally", "555-555-4646", "sally@blocmail.com")
     end
 
     it "searches AddressBook for Sussie" do
       book.import_from_csv("entries.csv")
-      entry = book.binary_search("Sussie")
+      entry = book.binary_search("Sussie", "sussie@blocmail.com")
       expect(entry).to be_a Entry
       check_entry(entry, "Sussie", "555-555-2036", "sussie@blocmail.com")
     end
@@ -183,46 +183,46 @@ RSpec.describe AddressBook do
 
     it "searches AddressBook for a non-existant entry" do
       book.import_from_csv("entries.csv")
-      entry = book.iterative_search("Dan")
+      entry = book.iterative_search("Dan","dan@blocmail.com")
       expect(entry).to be_nil
     end
 
     it "searches AddressBook for Bill" do
       book.import_from_csv("entries.csv")
-      entry = book.iterative_search("Bill")
+      entry = book.iterative_search("Bill", "bill@blocmail.com")
       check_entry(entry, "Bill", "555-555-4854", "bill@blocmail.com")
     end
 
     it "searches AddressBook for Billy" do
       book.import_from_csv("entries.csv")
-      entry = book.iterative_search("Billy")
+      entry = book.iterative_search("Billy", "bill@blocmail.com")
       expect(entry).to be_nil
     end
 
     it "searches AddressBook for Bob" do
       book.import_from_csv("entries.csv")
-      entry = book.iterative_search("Bob")
+      entry = book.iterative_search("Bob", "bob@blocmail.com")
       expect(entry).to be_a Entry
       check_entry(entry, "Bob", "555-555-5415", "bob@blocmail.com")
     end
 
     it "searches AddressBook for Joe" do
       book.import_from_csv("entries.csv")
-      entry = book.iterative_search("Joe")
+      entry = book.iterative_search("Joe", "joe@blocmail.com")
       expect(entry).to be_a Entry
       check_entry(entry, "Joe", "555-555-3660", "joe@blocmail.com")
     end
 
     it "searches AddressBook for Sally" do
       book.import_from_csv("entries.csv")
-      entry = book.iterative_search("Sally")
+      entry = book.iterative_search("Sally", "sally@blocmail.com")
       expect(entry).to be_a Entry
       check_entry(entry, "Sally", "555-555-4646", "sally@blocmail.com")
     end
 
     it "searches AddressBook for Sussie" do
       book.import_from_csv("entries.csv")
-      entry = book.iterative_search("Sussie")
+      entry = book.iterative_search("Sussie", "sussie@blocmail.com")
       expect(entry).to be_a Entry
       check_entry(entry, "Sussie", "555-555-2036", "sussie@blocmail.com")
     end
