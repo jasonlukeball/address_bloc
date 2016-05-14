@@ -164,10 +164,13 @@ class MenuController
 
 
   def search_entries
-    print "Search by name: "
+    print "Enter name: "
     name = gets.chomp
 
-    match = address_book.binary_search(name)
+    print "Enter email: "
+    email = gets.chomp
+
+    match = address_book.binary_search(name, email)
     system "clear"
 
     if match

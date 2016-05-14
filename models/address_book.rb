@@ -35,15 +35,16 @@ class AddressBook
 
   end
 
-  def binary_search(name)
+  def binary_search(name,email)
     lower = 0
     upper = entries.length - 1
 
     while lower <= upper
       mid = ( lower + upper ) / 2
       mid_name = entries[mid].name
+      mid_email = entries[mid].email
 
-      if name == mid_name
+      if name == mid_name && email == mid_email
         return entries[mid]
       elsif name < mid_name
         upper = mid - 1
